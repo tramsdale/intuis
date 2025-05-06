@@ -1,6 +1,6 @@
 {
-    "domain": "intuis_netatmo",
-    "name": "IntuisNetatmo",
+    "domain": "intuis",
+    "name": "Intuis",
     "documentation": "https://github.com/tramsdale/intuis",
     "dependencies": [],
     "codeowners": ["@tramsdale"],
