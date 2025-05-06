@@ -9,4 +9,7 @@ fi
 pip install -r requirements.txt
 
 # Run the documentation setup script
-python setup_docs.py 
+python setup_docs.py
+
+# Generate README.md
+python generate_readme.py 

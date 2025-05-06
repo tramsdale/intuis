@@ -414,7 +414,7 @@
 <span class="sd">            Dict: Response from the API</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">token</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_token</span><span class="p">()</span>
-        <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">base_url</span><span class="si">}</span><span class="s2">/api/setroomthermpoint&quot;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">base_url</span><span class="si">}</span><span class="s2">/syncapi/v1/setstate&quot;</span>
         <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
             <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">token</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
             <span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span>
@@ -452,7 +452,7 @@
 <span class="sd">            Dict: Response from the API</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">token</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_token</span><span class="p">()</span>
-        <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">base_url</span><span class="si">}</span><span class="s2">/api/setroomthermpoint&quot;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">base_url</span><span class="si">}</span><span class="s2">/syncapi/v1/setstate&quot;</span>
         <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
             <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">token</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
             <span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span>
@@ -600,7 +600,7 @@
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">homestatus</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">get_homestatus</span><span class="p">()</span>
             
-        <span class="k">for</span> <span class="n">room</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">homestatus</span><span class="p">[</span><span class="s2">&quot;home&quot;</span><span class="p">][</span><span class="s2">&quot;rooms&quot;</span><span class="p">]:</span>
+        <span class="k">for</span> <span class="n">room</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">homestatus</span><span class="p">[</span><span class="s2">&quot;body&quot;</span><span class="p">][</span><span class="s2">&quot;home&quot;</span><span class="p">][</span><span class="s2">&quot;rooms&quot;</span><span class="p">]:</span>
             <span class="k">if</span> <span class="n">room</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">room_id</span><span class="p">:</span>
                 <span class="k">return</span> <span class="p">{</span>
                     <span class="s2">&quot;mode&quot;</span><span class="p">:</span> <span class="n">room</span><span class="p">[</span><span class="s2">&quot;therm_setpoint_mode&quot;</span><span class="p">],</span>
@@ -630,7 +630,7 @@
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">homestatus</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">get_homestatus</span><span class="p">()</span>
             
-        <span class="k">for</span> <span class="n">room</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">homestatus</span><span class="p">[</span><span class="s2">&quot;home&quot;</span><span class="p">][</span><span class="s2">&quot;rooms&quot;</span><span class="p">]:</span>
+        <span class="k">for</span> <span class="n">room</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">homestatus</span><span class="p">[</span><span class="s2">&quot;body&quot;</span><span class="p">][</span><span class="s2">&quot;home&quot;</span><span class="p">][</span><span class="s2">&quot;rooms&quot;</span><span class="p">]:</span>
             <span class="k">if</span> <span class="n">room</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">room_id</span><span class="p">:</span>
                 <span class="k">return</span> <span class="p">{</span>
                     <span class="s2">&quot;target_temp&quot;</span><span class="p">:</span> <span class="n">room</span><span class="p">[</span><span class="s2">&quot;therm_setpoint_temperature&quot;</span><span class="p">],</span>
@@ -658,7 +658,7 @@
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">homestatus</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">get_homestatus</span><span class="p">()</span>
             
-        <span class="k">for</span> <span class="n">room</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">homestatus</span><span class="p">[</span><span class="s2">&quot;home&quot;</span><span class="p">][</span><span class="s2">&quot;rooms&quot;</span><span class="p">]:</span>
+        <span class="k">for</span> <span class="n">room</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">homestatus</span><span class="p">[</span><span class="s2">&quot;body&quot;</span><span class="p">][</span><span class="s2">&quot;home&quot;</span><span class="p">][</span><span class="s2">&quot;rooms&quot;</span><span class="p">]:</span>
             <span class="k">if</span> <span class="n">room</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">room_id</span><span class="p">:</span>
                 <span class="k">return</span> <span class="n">room</span><span class="p">[</span><span class="s2">&quot;therm_measured_temperature&quot;</span><span class="p">]</span>
                 
@@ -683,7 +683,7 @@
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">homestatus</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">get_homestatus</span><span class="p">()</span>
             
-        <span class="k">for</span> <span class="n">module</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">homestatus</span><span class="p">[</span><span class="s2">&quot;home&quot;</span><span class="p">][</span><span class="s2">&quot;modules&quot;</span><span class="p">]:</span>
+        <span class="k">for</span> <span class="n">module</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">homestatus</span><span class="p">[</span><span class="s2">&quot;body&quot;</span><span class="p">][</span><span class="s2">&quot;home&quot;</span><span class="p">][</span><span class="s2">&quot;modules&quot;</span><span class="p">]:</span>
             <span class="k">if</span> <span class="n">module</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">water_heater_id</span> <span class="ow">and</span> <span class="n">module</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;NMW&quot;</span><span class="p">:</span>
                 <span class="k">return</span> <span class="n">module</span><span class="p">[</span><span class="s2">&quot;contactor_mode&quot;</span><span class="p">]</span>
                 
