@@ -1,0 +1,22 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "title": "IntuisNetatmo Configuration",
+                "description": "Enter your IntuisNetatmo credentials",
+                "data": {
+                    "username": "Username",
+                    "password": "Password",
+                    "client_id": "Client ID",
+                    "client_secret": "Client Secret"
+                }
+            }
+        },
+        "error": {
+            "cannot_connect": "Failed to connect to IntuisNetatmo. Please check your credentials."
+        },
+        "abort": {
+            "already_configured": "IntuisNetatmo is already configured"
+        }
+    }
+} 
